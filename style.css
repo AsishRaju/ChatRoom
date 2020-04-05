@@ -1,0 +1,22 @@
+body{
+    background-color: 	#181a1b !important;
+}
+
+.container{
+    max-width: 600px;
+}
+
+.username{
+    font-weight: bold;
+}
+
+.time{
+    font-size: 0.7em;
+    color:rgb(172, 172, 172);
+}
+
+.room-title{
+    animation-duration: 5s;
+    animation-delay: 7s;
+
+}

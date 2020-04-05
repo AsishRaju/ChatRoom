@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favi/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favi/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favi/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <title>Chat-App</title>
+</head>
+<body>
+
+    <!-- container & title -->
+    <div class="container my-4">
+        <h1 class="my-4 text-center text-light animated fadeInUp">
+            Chat Room <span class="animated tada delay-1s" style="display: inline-block;">💬</span>
+        </h1>
+        
+
+    <!-- buttons for chatroom -->
+    <div class="chat-rooms mb-3 text-center">
+        <div class="my-2 font-weight-bold text-light animated fadeInUp delay-2s">Choose a chat room:</div>
+        <button class="btn btn-primary text-monospace font-weight-bold animated fadeInUp delay-3s faster" id="General" style="margin-bottom: 10px;">#General 👌🏻</button>
+        <button class="btn btn-light  text-monospace font-weight-bold animated fadeInUp delay-3s faster" id="Gaming" style="margin-bottom: 10px;">#Gaming 🎮</button>
+        <button class="btn btn-danger text-monospace font-weight-bold animated fadeInUp delay-4s faster" id="Studies" style="margin-bottom: 10px;">#Studies 📚</button>
+        <button class="btn btn-success text-monospace font-weight-bold animated fadeInUp delay-4s faster" id="Parties" style="margin-bottom: 10px;">#Parties🥳</button>
+    </div>
+    
+    <!-- room title -->
+    <div class="room-title mb-3 text-center text-light text-monospace font-weight-bold animated fadeInUp">
+            No Chat Room Selected
+    </div>
+
+    <!-- chat list /window -->
+        <div class="chat-window">
+            <ul class="chat-list list-group" style="overflow-y:auto; max-height: 250px;">
+
+            </ul>
+        </div>
+
+    <!-- new chat from -->
+    <form class="new-chat my-3 d-none">
+        <div class="input-group">
+            <div class="input-group-prepend" >
+                <div class="input-group-text font-weight-bold text-light" style="background-color: #181a1b;">Your Message:</div>
+            </div>
+            <input type="text" id="message" class="form-control text-light" required style="background-color: #323435;">
+            <div class="input-group-prepend">
+                <input type="submit" class="btn btn-warning font-weight-bold" value=" Send ➡">
+            </div>
+        </div>
+    </form>
+    <!-- update name form -->
+    <form class="new-name my-3 d-none">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text font-weight-bold text-light" style="background-color: #181a1b;">Update Name:</div>
+            </div>
+            <input type="text" id="name" class="form-control text-light" required style="background-color: #323435;">
+            <div class="input-group-prepend">
+                <input type="submit" class="btn btn-warning font-weight-bold" value="Update 🔄">
+            </div>
+        </div>
+        <div class="update-mssg text-center text-light " style="margin-top: 5px;">
+        </div>
+    </form>
+    <div class="branding text-center text-light text-monospace font-weight-bold d-none" style="margin-top: 40px;">
+        <p>Backed by: <img src="svg/firebase-seeklogo.com.svg" alt="Smiley face" width="42" height="42">+ <img src="svg/icons8-javascript.svg" alt="Smiley face" width="42" height="42">+ <img src="svg/man-technologist-light-skin-tone.svg" alt=""></p>
+        <a href="https://github.com/AsishRaju?tab=repositories" class="badge badge-light" style="margin-top: 10px;">Asish.io ⚡</a>
+    </div>
+    </div>
+
+<script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCUHn7pP5XYycAYF23BvU2W1pJXSP5Mz5E",
+    authDomain: "udemy-mordern-javascript-4b172.firebaseapp.com",
+    databaseURL: "https://udemy-mordern-javascript-4b172.firebaseio.com",
+    projectId: "udemy-mordern-javascript-4b172",
+    storageBucket: "udemy-mordern-javascript-4b172.appspot.com",
+    messagingSenderId: "377398555486",
+    appId: "1:377398555486:web:b11fa8020a4dc586c355cf",
+    measurementId: "G-GF8NJDLWYD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db=firebase.firestore()
+</script>
+<script src="scripts/chat.js"></script>
+<script src="scripts/ui.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>
